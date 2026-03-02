@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project("LCEMP")
 
+set(LCEMP_WORKING_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Assets" CACHE STRING "The working directory for MinecraftClient")
+
 set(CMAKE_CXX_STANDARD 11)
 add_subdirectory(Vendor)
 
@@ -18,6 +20,8 @@ list(TRANSFORM MINECRAFT_CLIENT_SOURCES PREPEND "${CMAKE_CURRENT_SOURCE_DIR}/Min
 
 add_library(MinecraftWorld STATIC ${MINECRAFT_WORLD_SOURCES})
 add_executable(MinecraftClient WIN32 ${MINECRAFT_CLIENT_SOURCES})
+
+set_property(TARGET MinecraftClient PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${LCEMP_WORKING_DIR}")
 
 if(MSVC)
     # /MT and /MTd options set the CRT version to multi-threaded static mode

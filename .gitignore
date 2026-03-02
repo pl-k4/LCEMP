@@ -54,7 +54,8 @@ Minecraft.Client/music/
 *.binka
 
 # Common Media - UI (SWF), Graphics (PNG), Sound (WAV), Fonts
-Minecraft.Client/Common/Media/
+Assets
+Assets/Common/Media/
 # Game resource textures, art, audio, etc.
 Minecraft.Client/Common/res/
 Minecraft.Client/Common/DummyTexturePack/
@@ -82,7 +83,7 @@ Minecraft.Client/Windows64/GameHDD/
 # Thumbnail / test images
 *.png
 # But allow source code PNG references to be noted
-!Minecraft.Client/Common/Media/Graphics/.gitkeep
+!Assets/Common/Media/Graphics/.gitkeep
 
 # SWF UI files (Flash-based UI assets)
 *.swf
