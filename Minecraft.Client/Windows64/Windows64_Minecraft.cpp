@@ -730,6 +730,8 @@ app.DebugPrintf("width: %d, height: %d\n", width, height);
 	descDSView.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
 	descDSView.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
 	descDSView.Texture2D.MipSlice = 0;
+	// when would this ever be a non-garbage value?
+	descDSView.Flags = 0;
 
 	hr = g_pd3dDevice->CreateDepthStencilView(g_pDepthStencilBuffer, &descDSView, &g_pDepthStencilView);
 
